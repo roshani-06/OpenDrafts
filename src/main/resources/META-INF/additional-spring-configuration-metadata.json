@@ -1,0 +1,6 @@
+{ 
+"properties": [ { 
+"name": "admin.password", 
+"type": "java.lang.String", 
+"description": "Password required to publish a new blog post."
+ } ] }
