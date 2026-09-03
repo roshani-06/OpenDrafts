@@ -14,7 +14,6 @@ A full-stack blog web application built with Spring Boot, JSP, and MySQL — fea
 - **Lightweight rich text** — bold/italic formatting via a custom toolbar that wraps selected text with HTML tags
 - **Session-based admin login** — Create/Edit/Delete controls are only rendered for logged-in admins; visitors get a fully read-only experience
 - **Working contact form** — submissions are validated and persisted to the database, not just a static form
-- **Search** — filter posts by keyword across title and content
 - **Responsive design** — custom CSS, no framework, built around a warm editorial aesthetic
 
 ## Tech Stack
