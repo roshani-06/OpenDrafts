@@ -98,4 +98,3 @@ Post creation, editing, and deletion are gated behind a session-based login at `
 ## Author
 
 **Roshani Jaigude**
-Built as part of a placement portfolio, showcasing full-stack development, database design, and deployment.
