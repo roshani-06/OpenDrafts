@@ -25,10 +25,9 @@
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="${pageContext.request.contextPath}/posts">&larr; Back to all posts</a>
   <h1>${post.title}</h1>
   <c:if test="${not empty post.imageUrl}">
-  <img src="${pageContext.request.contextPath}${post.imageUrl}" alt="${post.title}" style="width:100%; border-radius:8px; margin:20px 0;">
+  <img src="${post.imageUrl}" alt="${post.title}" ...>
   </c:if>
   <div class="meta">by ${post.author}</div>
   <div class="content">${post.content}</div>

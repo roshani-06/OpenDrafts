@@ -136,7 +136,6 @@
 </style>
 </head>
 <body>
-
   <header>
     <div class="wrap">
       <div class="logo">Open<span>Drafts</span></div>

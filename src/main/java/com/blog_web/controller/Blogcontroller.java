@@ -1,6 +1,9 @@
 package com.blog_web.controller;
 
 import org.springframework.web.multipart.MultipartFile;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
+import java.util.Map;
 import jakarta.servlet.http.HttpSession;
 import com.blog_web.bean.ContactMessage;
 import com.blog_web.dao.ContactMessageRepository;
@@ -32,6 +35,8 @@ public class Blogcontroller {
 	private PostRepository postRepository;
 	@Autowired
 	private ContactMessageRepository contactMessageRepository;
+	@Autowired
+	private Cloudinary cloudinary;
 
 	@Value("${admin.password}")
     private String adminPassword;
@@ -112,12 +117,8 @@ public class Blogcontroller {
         post.setContent(content);
 
         if (image != null && !image.isEmpty()) {
-            File dir = new File(uploadDir);
-            if (!dir.exists()) dir.mkdirs();
-            String filename = UUID.randomUUID() + "_" + image.getOriginalFilename();
-            Path filepath = Path.of(uploadDir, filename);
-            Files.write(filepath, image.getBytes());
-            post.setImageUrl("/uploads/" + filename);
+            Map uploadResult = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
+            post.setImageUrl((String) uploadResult.get("secure_url"));
         }
 
         postRepository.save(post);
@@ -158,12 +159,8 @@ public class Blogcontroller {
         post.setContent(content);
 
         if (image != null && !image.isEmpty()) {
-            File dir = new File(uploadDir);
-            if (!dir.exists()) dir.mkdirs();
-            String filename = UUID.randomUUID() + "_" + image.getOriginalFilename();
-            Path filepath = Path.of(uploadDir, filename);
-            Files.write(filepath, image.getBytes());
-            post.setImageUrl("/uploads/" + filename);
+            Map uploadResult = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
+            post.setImageUrl((String) uploadResult.get("secure_url"));
         }
 
         postRepository.save(post);
@@ -178,14 +175,10 @@ public class Blogcontroller {
             return "Not logged in.";
         }
 
-        File dir = new File(uploadDir);
-        if (!dir.exists()) dir.mkdirs();
+        Map uploadResult = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
+        String url = (String) uploadResult.get("secure_url");
 
-        String filename = UUID.randomUUID() + "_" + image.getOriginalFilename();
-        Path filepath = Path.of(uploadDir, filename);
-        Files.write(filepath, image.getBytes());
-
-        return "<img src=\"/uploads/" + filename + "\" style=\"width:100%; border-radius:8px; margin:16px 0;\">";
+        return "<img src=\"" + url + "\" style=\"width:100%; border-radius:8px; margin:16px 0;\">";
     }
 
     @GetMapping("/admin/login")

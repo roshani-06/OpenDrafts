@@ -59,7 +59,7 @@
 
     <label for="image">Blog Image <c:if test="${not empty post}">(leave empty to keep current image)</c:if></label>
     <c:if test="${not empty post.imageUrl}">
-      <img class="current-img" src="${pageContext.request.contextPath}${post.imageUrl}" alt="Current image">
+      <img class="current-img" src="${post.imageUrl}" alt="Current image">
     </c:if>
     <input type="file" id="image" name="image" accept="image/*">
 
