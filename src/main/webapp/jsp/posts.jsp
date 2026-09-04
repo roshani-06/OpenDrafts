@@ -27,7 +27,7 @@
   .new-btn{display:inline-block; margin-bottom:32px; padding:10px 18px; background:var(--accent); color:var(--white); border-radius:6px; font-weight:600;}
   .post-card{border-bottom:1px solid var(--line); padding:24px 0;}
   <c:if test="${not empty post.imageUrl}">
-  <img src="${post.imageUrl}" alt="${post.title}" ...>
+  <img src="${post.imageUrl}" alt="${post.title}" style="width:100%; border-radius:8px; margin:20px 0;">
   </c:if>
   .post-title{font-family:'Fraunces', serif; font-size:1.4rem; margin-bottom:6px;}
   .post-meta{color:var(--ink-soft); font-size:0.9rem; margin-bottom:10px;}

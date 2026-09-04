@@ -27,7 +27,7 @@
 <div class="wrap">
   <h1>${post.title}</h1>
   <c:if test="${not empty post.imageUrl}">
-  <img src="${post.imageUrl}" alt="${post.title}" ...>
+  <img src="${post.imageUrl}" alt="${post.title}" style="width:100%; border-radius:8px; margin:20px 0;">
   </c:if>
   <div class="meta">by ${post.author}</div>
   <div class="content">${post.content}</div>
