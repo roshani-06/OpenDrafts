@@ -200,7 +200,7 @@
         <article class="post">
           <div class="post-thumb t${(status.index % 4) + 1}">
   			<c:if test="${not empty post.imageUrl}">
-    		<img src="${post.imageUrl}" alt="${post.title}" style="width:100%; border-radius:8px; margin:20px 0;">
+    		<img src="${post.imageUrl}" alt="${post.title}" style="width:100%; height:100%; object-fit:cover;">
   			</c:if>
 		  </div>
           <div class="post-body">
