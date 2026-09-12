@@ -201,5 +201,11 @@ public class Blogcontroller {
         session.invalidate();
         return "redirect:/posts";
     }
+    
+    @GetMapping("/ping")
+    @ResponseBody
+    public String ping() {
+        return "OK";
+    }
 
 }
