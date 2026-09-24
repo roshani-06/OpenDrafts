@@ -22,6 +22,39 @@
   body{background:var(--paper); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6;}
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:760px; margin:0 auto; padding:60px 24px;}
+  
+   /* HEADER */
+  header{
+    border-bottom:2px solid var(--ink);
+    padding:22px 0;
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:26px;
+  }
+  .logo span{color:var(--accent);}
+
+  nav{
+    display:flex;
+    align-items:center;
+    gap:26px;
+  }
+  nav a{
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    transition:color .15s ease;
+  }
+  nav a:hover, nav a.active{color:var(--accent);}
+  
   h1{font-family:'Fraunces', serif; font-size:2.2rem; margin-bottom:8px;}
   .sub{color:var(--ink-soft); margin-bottom:40px;}
   .new-btn{display:inline-block; margin-bottom:32px; padding:10px 18px; background:var(--accent); color:var(--white); border-radius:6px; font-weight:600;}

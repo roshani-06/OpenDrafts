@@ -141,7 +141,7 @@
       <div class="logo">Open<span>Drafts</span></div>
       <nav>
         <a href="home">Home</a>
-        <a href="posts">Postst</a>
+        <a href="posts">Posts</a>
         <a href="aboutus" class="active">About</a>
         <a href="contact">Contact</a>
         <c:choose>
