@@ -168,7 +168,7 @@
       <div class="logo">Open<span>Drafts</span></div>
       <nav>
         <a href="home" class="active">Home</a>
-        
+        <a href="posts">Posts</a>
         <a href="aboutus">About</a>
         <a href="contact">Contact</a>
         <c:choose>

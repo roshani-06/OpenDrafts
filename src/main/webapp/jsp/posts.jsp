@@ -36,6 +36,27 @@
 </style>
 </head>
 <body>
+
+<header>
+    <div class="wrap">
+      <div class="logo">Open<span>Drafts</span></div>
+      <nav>
+        <a href="home">Home</a>
+        <a href="posts"class="active">Posts</a>
+        <a href="aboutus">About</a>
+        <a href="contact">Contact</a>
+        <c:choose>
+ 		 	<c:when test="${sessionScope.isAdmin}">
+    			<a href="${pageContext.request.contextPath}/admin/logout">Logout</a>
+  		 	</c:when>
+  			<c:otherwise>
+    			<a href="${pageContext.request.contextPath}/admin/login">Admin</a>
+ 			</c:otherwise>
+		</c:choose>
+      </nav>
+    </div>
+  </header>
+
 <div class="wrap">
   <h1>All Posts</h1>
   <p class="sub">Thoughts, drafts, and everything in between.</p>

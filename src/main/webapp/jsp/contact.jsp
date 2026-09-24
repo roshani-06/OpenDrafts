@@ -180,7 +180,7 @@
       <div class="logo">Open<span>Drafts</span></div>
       <nav>
         <a href="home">Home</a>
-        
+        <a href="posts">Posts</a>
         <a href="aboutus">About</a>
         <a href="contact" class="active">Contact</a>
         <c:choose>
